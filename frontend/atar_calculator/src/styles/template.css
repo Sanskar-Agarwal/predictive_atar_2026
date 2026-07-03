@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans');
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('../assets/fonts/Apercu Pro Regular.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('../assets/fonts/Apercu Pro Bold.otf') format('opentype');
+    font-weight: bold;
+}
+
+:root {
+    --default-bg-color: #E64626;
+    --default-font-family: "Apercu Pro", "Space Grotesk", 'Work Sans', Arial, sans-serif;
+}

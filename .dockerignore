@@ -1,0 +1,9 @@
+venv/
+.git/
+.idea/
+.vscode/
+node_modules/
+frontend/atar_calculator/node_modules/
+frontend/atar_calculator/build/
+__pycache__/
+*.pyc

@@ -1,0 +1,135 @@
+.table-row {
+    display: flex;
+}
+
+.subject-column, 
+.mark-column,
+.max-mark-column,
+.subject-level-column,
+.weighting-column, 
+.year-column {
+    position: relative;
+    padding: 10px;
+    border-top: 0px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+} 
+
+.subject-column {
+    min-width: 0px;
+    align-items: center ;
+    transition: 0.3s;
+}
+
+.add-more-subject-row {
+    padding: 10px;
+    border-radius: 0px 0px 12px 12px;
+    border: 2px solid;
+    justify-content: center;
+    display: flex; 
+    border-top: None;
+}
+
+.add-button {
+    display: flex;
+    border-radius: 50%;
+    background-color: var(--default-bg-color);
+    height: 1em;
+    width: 1em;
+    color: white;
+    font-size: 40px;
+    transition: 0.2s;
+}
+
+.add-button img { 
+    scale: 0.6;
+}
+
+.add-button:hover {
+    scale: 1.2;
+}
+
+.numerical-input {
+    width: 80%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-size: 13px;
+}
+
+input[type="number"] {
+    padding: 0px 10px;
+}
+
+.subject-datalist,
+.mark-datalist
+{
+    border: None;
+    outline: None;
+    width: 100%;
+    font-family: var(--default-font-family); 
+    font-size: 13px;
+}
+
+.subject-datalist {
+    height: 2em;
+}
+
+/* type-to-filter subject dropdown */
+.subject-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: white;
+    border: 2px solid black;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.subject-option {
+    padding: 8px 10px;
+    font-family: var(--default-font-family);
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.subject-option:hover,
+.subject-option.highlighted {
+    background-color: var(--default-bg-color);
+    color: white;
+}
+
+.mark-select {
+    width: 100%;
+    padding: 0px 10px;
+    font-family: var(--default-font-family);
+    font-size: 15px;
+    background-color: white;
+    border-color: transparent;
+}
+
+.mark-select:hover {
+    background-color: var(--default-bg-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+.hover-text {
+    background-color: var(--default-bg-color);
+    padding: 1em;
+    color: white;
+    display: inline-block;
+    position: absolute;
+    width: 80%;
+    z-index: 99;
+    transform: scale(1.1) translate(30px, 30px);
+    opacity: 0.8;
+    transition: transform 1s ease;
+}

@@ -1,0 +1,13 @@
+.cat-container { 
+  position: relative;
+  top: -10.8%;
+  height: 80px;
+  width: 100px;
+  transition: 0.1s;
+}
+
+.cat-container > img { 
+  width: 100%;
+}
+
+

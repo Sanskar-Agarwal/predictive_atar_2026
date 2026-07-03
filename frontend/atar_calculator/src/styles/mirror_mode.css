@@ -1,0 +1,21 @@
+.mirror-mode-container { 
+    display: flex;
+    width: 100%;
+}
+
+.mirror-mode-left-container, 
+.mirror-mode-right-container {
+    width: 50%;
+    height: 100%;
+    font-family: var(--default-font-family);
+}
+
+.mirror-mode-left-container {
+}
+
+/* Give the pdf viewer tighter margins inside the narrower 50% mirror column
+   than it uses as a full-width page. */
+.mirror-mode-right-container .pdf-display-container {
+    margin: 8px 2%;
+    height: 800px;
+}

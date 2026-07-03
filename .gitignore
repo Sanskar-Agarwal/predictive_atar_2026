@@ -1,0 +1,12 @@
+.DS_Store
+env_ATAR/
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+core/migrations/
+# This branch (render-deploy) is pushed to a GitHub.com repo for Render's
+# deploy — unlike the local Docker "sanskar" branch, these must NOT be
+# committed here. Provided via Render's Secret Files / env vars instead.
+credentials.json
+.env

@@ -1,0 +1,656 @@
+{
+  "Andrew Erin.pdf": {
+    "region": "NSW",
+    "grade_format": "mixed",
+    "subjects": [
+      {
+        "subject": "Studies of Religion I",
+        "mark": "47/50",
+        "scale": "numerical_out_of_50",
+        "source_label": "Trial HSC Examination Mark 1 Unit"
+      },
+      {
+        "subject": "English (Advanced)",
+        "mark": "91%",
+        "scale": "numerical_percent",
+        "source_label": "Trial HSC Examination Mark"
+      },
+      {
+        "subject": "Mathematics",
+        "mark": "95%",
+        "scale": "numerical_percent",
+        "source_label": "Trial HSC Examination Mark"
+      },
+      {
+        "subject": "Ancient History",
+        "mark": "99%",
+        "scale": "numerical_percent",
+        "source_label": "Trial HSC Examination Mark"
+      },
+      {
+        "subject": "History Extension",
+        "mark": "47/50",
+        "scale": "numerical_out_of_50",
+        "source_label": "Trial HSC Examination Mark 1 Unit"
+      },
+      {
+        "subject": "Modern History",
+        "mark": "94%",
+        "scale": "numerical_percent",
+        "source_label": "Trial HSC Examination Mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "90%",
+        "scale": "numerical_percent",
+        "source_label": "Trial HSC Examination Mark"
+      }
+    ],
+    "usage": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 16454,
+      "output_tokens": 234,
+      "pages": 10
+    }
+  },
+  "Agnew Andrei.pdf": {
+    "region": "NSW",
+    "grade_format": "mixed",
+    "subjects": [
+      {
+        "subject": "English Advanced",
+        "mark": "66.0%",
+        "scale": "numerical_percent",
+        "source_label": "Raw %"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "88.6%",
+        "scale": "numerical_percent",
+        "source_label": "Raw %"
+      },
+      {
+        "subject": "Mathematics Extension 2",
+        "mark": "80.0%",
+        "scale": "numerical_percent",
+        "source_label": "Raw %"
+      },
+      {
+        "subject": "Physics",
+        "mark": "80.0%",
+        "scale": "numerical_percent",
+        "source_label": "Raw %"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "69.0%",
+        "scale": "numerical_percent",
+        "source_label": "Raw %"
+      },
+      {
+        "subject": "Music 2",
+        "mark": "83.0%",
+        "scale": "numerical_percent",
+        "source_label": "Raw %"
+      },
+      {
+        "subject": "English Advanced",
+        "mark": "77",
+        "scale": "numerical_percent",
+        "source_label": "Class Mark"
+      },
+      {
+        "subject": "Mathematics Extension 1 and 2",
+        "mark": "93",
+        "scale": "numerical_percent",
+        "source_label": "Class Mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "83",
+        "scale": "numerical_percent",
+        "source_label": "Class Mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "84",
+        "scale": "numerical_percent",
+        "source_label": "Class Mark"
+      },
+      {
+        "subject": "Music 2",
+        "mark": "83",
+        "scale": "numerical_percent",
+        "source_label": "Class Mark"
+      }
+    ],
+    "usage": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 11791,
+      "output_tokens": 297,
+      "pages": 7
+    }
+  },
+  "Bob Chen.pdf": {
+    "region": "NSW",
+    "grade_format": "mixed",
+    "subjects": [
+      {
+        "subject": "English Advanced",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "overall grade"
+      },
+      {
+        "subject": "English Extension 1",
+        "mark": "B",
+        "scale": "band_A_E",
+        "source_label": "overall grade"
+      },
+      {
+        "subject": "Mathematics",
+        "mark": "95",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "46",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "overall grade"
+      },
+      {
+        "subject": "Physics",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "overall grade"
+      },
+      {
+        "subject": "Economics",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "overall grade"
+      },
+      {
+        "subject": "English Advanced",
+        "mark": "95",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "English Extension 1",
+        "mark": "45",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Mathematics",
+        "mark": "95",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "45",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "95",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "98",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Economics",
+        "mark": "92",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "English Advanced",
+        "mark": "94",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "90",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Mathematics Extension 2",
+        "mark": "93",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "94",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "96",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "Economics",
+        "mark": "93",
+        "scale": "numerical_percent",
+        "source_label": "scaled assessment mark"
+      },
+      {
+        "subject": "English Advanced",
+        "mark": "93",
+        "scale": "numerical_percent",
+        "source_label": "scaled trial examination mark"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "92",
+        "scale": "numerical_percent",
+        "source_label": "scaled trial examination mark"
+      },
+      {
+        "subject": "Mathematics Extension 2",
+        "mark": "94",
+        "scale": "numerical_percent",
+        "source_label": "scaled trial examination mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "96",
+        "scale": "numerical_percent",
+        "source_label": "scaled trial examination mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "98",
+        "scale": "numerical_percent",
+        "source_label": "scaled trial examination mark"
+      },
+      {
+        "subject": "Economics",
+        "mark": "93",
+        "scale": "numerical_percent",
+        "source_label": "scaled trial examination mark"
+      }
+    ],
+    "usage": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 55194,
+      "output_tokens": 655,
+      "pages": 35
+    }
+  },
+  "Mehta Aditya.pdf": {
+    "region": "NSW",
+    "grade_format": "mixed",
+    "subjects": [
+      {
+        "subject": "English (Advanced) - HSC",
+        "mark": "100%",
+        "scale": "numerical_percent",
+        "source_label": "Speech Mark"
+      },
+      {
+        "subject": "Mathematics Extension 1a - HSC",
+        "mark": "99%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      },
+      {
+        "subject": "Mathematics Extension 2",
+        "mark": "91%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      },
+      {
+        "subject": "Chemistry - HSC",
+        "mark": "98%",
+        "scale": "numerical_percent",
+        "source_label": "Depth Study Mark"
+      },
+      {
+        "subject": "Physics - HSC",
+        "mark": "93%",
+        "scale": "numerical_percent",
+        "source_label": "Depth Study Mark"
+      },
+      {
+        "subject": "Business Studies - HSC",
+        "mark": "75%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      },
+      {
+        "subject": "English (Advanced)",
+        "mark": "B",
+        "scale": "other",
+        "source_label": "Course Grade"
+      },
+      {
+        "subject": "English (Advanced)",
+        "mark": "90%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Mathematics",
+        "mark": "A",
+        "scale": "other",
+        "source_label": "Course Grade"
+      },
+      {
+        "subject": "Mathematics",
+        "mark": "100%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "A",
+        "scale": "other",
+        "source_label": "Course Grade"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "49/50",
+        "scale": "numerical_out_of_50",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "B",
+        "scale": "other",
+        "source_label": "Course Grade"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "83%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "B",
+        "scale": "other",
+        "source_label": "Course Grade"
+      },
+      {
+        "subject": "Physics",
+        "mark": "65%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Business Studies",
+        "mark": "A",
+        "scale": "other",
+        "source_label": "Course Grade"
+      },
+      {
+        "subject": "Business Studies",
+        "mark": "91%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Studies of Religion",
+        "mark": "B",
+        "scale": "other",
+        "source_label": "Course Grade"
+      },
+      {
+        "subject": "Studies of Religion",
+        "mark": "40/50",
+        "scale": "numerical_out_of_50",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "English (Advanced)",
+        "mark": "80%",
+        "scale": "numerical_percent",
+        "source_label": "Course Mark"
+      },
+      {
+        "subject": "English (Advanced)",
+        "mark": "80%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Mathematics",
+        "mark": "91%",
+        "scale": "numerical_percent",
+        "source_label": "Course Mark"
+      },
+      {
+        "subject": "Mathematics",
+        "mark": "91%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "41/50",
+        "scale": "numerical_out_of_50",
+        "source_label": "Course Mark"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "41/50",
+        "scale": "numerical_out_of_50",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "80%",
+        "scale": "numerical_percent",
+        "source_label": "Course Mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "80%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "93%",
+        "scale": "numerical_percent",
+        "source_label": "Course Mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "93%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Business Studies",
+        "mark": "77%",
+        "scale": "numerical_percent",
+        "source_label": "Course Mark"
+      },
+      {
+        "subject": "Business Studies",
+        "mark": "77%",
+        "scale": "numerical_percent",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "Studies of Religion",
+        "mark": "41/50",
+        "scale": "numerical_out_of_50",
+        "source_label": "Course Mark"
+      },
+      {
+        "subject": "Studies of Religion",
+        "mark": "41/50",
+        "scale": "numerical_out_of_50",
+        "source_label": "Exam Mark"
+      },
+      {
+        "subject": "English (Advanced)",
+        "mark": "78%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "97%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      },
+      {
+        "subject": "Mathematics Extension 2",
+        "mark": "88%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      },
+      {
+        "subject": "Chemistry",
+        "mark": "76%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      },
+      {
+        "subject": "Physics",
+        "mark": "79%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      },
+      {
+        "subject": "Business Studies",
+        "mark": "80%",
+        "scale": "numerical_percent",
+        "source_label": "Examination Mark"
+      }
+    ],
+    "usage": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 55304,
+      "output_tokens": 1046,
+      "pages": 35
+    }
+  },
+  "Belzycki Nathan.pdf": {
+    "region": "NSW",
+    "grade_format": "non_numerical",
+    "subjects": [
+      {
+        "subject": "Chemistry",
+        "mark": "B",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Economics",
+        "mark": "B",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "English Standard",
+        "mark": "B",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Mathematics",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Physics",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      }
+    ],
+    "usage": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 17403,
+      "output_tokens": 162,
+      "pages": 11
+    }
+  },
+  "Bergheim AIDEN_NSW.pdf": {
+    "region": "NSW",
+    "grade_format": "non_numerical",
+    "subjects": [
+      {
+        "subject": "Business Studies",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Economics",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "English Advanced",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Mathematics Advanced",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Mathematics Extension 1",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Mathematics Extension 2",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      },
+      {
+        "subject": "Physics",
+        "mark": "A",
+        "scale": "band_A_E",
+        "source_label": "Grade"
+      }
+    ],
+    "usage": {
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 14900,
+      "output_tokens": 190,
+      "pages": 9
+    }
+  }
+}

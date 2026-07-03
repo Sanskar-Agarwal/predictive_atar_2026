@@ -1,0 +1,22 @@
+subject,units,category,region,is_language
+Software Engineering,2,A,NSW,
+Enterprise Computing,2,A,NSW,
+Politics,1,nan,VIC,
+Product Design and Technologies,1,nan,VIC,
+VCE VET Engineering,1,nan,VIC,
+VCE VET Health (Allied),1,nan,VIC,
+VCE VET Health Services Assistance,1,nan,VIC,
+VCE VET Hospitality (Cookery),1,nan,VIC,
+Agribusiness,2,A,WA,
+Agricultural Science and Technology,2,A,WA,
+Hindi,2,B,WA,True
+Indonesian: Background Language,2,B,WA,True
+Punjabi: Background Language,2,B,WA,True
+Tamil,2,B,WA,True
+Art Production,15,3.0,TAS,
+Art Theory and Criticism,15,3.0,TAS,
+Dance Choreography and Performance,15,3.0,TAS,
+Electronics,15,3.0,TAS,
+English Writing,15,3.0,TAS,
+Information Systems and Digital Technologies,15,3.0,TAS,
+Mathematics Methods – Foundation,15,3.0,TAS,

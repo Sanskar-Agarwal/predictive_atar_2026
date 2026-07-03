@@ -1,0 +1,12 @@
+wa_language_list = ['Aboriginal and Intercultural Studies: Aboriginal Languages', 'Arabic', 'Armenian',
+                     'Auslan (Australian Sign Language)', 'Bengali', 'Bosnian', 'Chin Hakha',
+                     'Chinese: Background Language', 'Chinese: First Language', 'Chinese: Second Language', 'Croatian',
+                     'Dutch', 'Filipino', 'French: Background Language', 'French: Second Language',
+                     'German: Background Language', 'German: Second Language', 'Hebrew', 'Hindi: Background Language',
+                     'Hindi: Second Language', 'Hungarian', 'Indonesian: First Language', 'Indonesian: Second Language',
+                     'Italian: Background Language', 'Italian: Second Language', 'Japanese: Background Language',
+                     'Japanese: Second Language', 'Karen', 'Khmer', 'Korean: Background Language',
+                     'Korean: Second Language', 'Macedonian', 'Malay: Background Speakers', 'Modern Greek', 'Nepali',
+                     'Persian', 'Punjabi', 'Romanian', 'Russian', 'Serbian', 'Sinhala', 'Spanish', 'Swedish',
+                     'Tamil: Background Language', 'Turkish',
+                     'Vietnamese']

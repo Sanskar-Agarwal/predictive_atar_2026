@@ -1,0 +1,40 @@
+# Production image: builds the React frontend, then serves it (and the API)
+# from a single Django process via gunicorn + whitenoise. Separate from the
+# root Dockerfile, which is for local Docker dev with two containers (CRA dev
+# server + Django dev server) — that setup is untouched by this file.
+
+# ---- Stage 1: build the React frontend ----
+FROM node:20 AS frontend-build
+WORKDIR /frontend
+COPY frontend/atar_calculator/package*.json ./
+RUN npm install
+COPY frontend/atar_calculator/ ./
+# Empty string -> the built app calls the same origin it's served from,
+# since Django serves both the API and the frontend here.
+ENV REACT_APP_API_URL=""
+RUN npm run build
+
+# ---- Stage 2: Django app serving the built frontend + API ----
+FROM python:3.11.6
+
+RUN apt-get update && apt-get install -y glpk-utils && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/src/app
+
+COPY . .
+COPY --from=frontend-build /frontend/build ./frontend/atar_calculator/build
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENV DJANGO_DEBUG=False
+ENV DJANGO_ALLOWED_HOSTS=*
+
+# Render (and most PaaS hosts) assign the port to listen on via $PORT.
+ENV PORT=8026
+EXPOSE 8026
+
+CMD python3 manage.py migrate && \
+    python3 manage.py loaddata fixtures/reference_data.json && \
+    python3 manage.py load_scaling && \
+    python3 manage.py collectstatic --noinput && \
+    gunicorn Predicted_ATAR_Calculation.wsgi:application --bind 0.0.0.0:$PORT

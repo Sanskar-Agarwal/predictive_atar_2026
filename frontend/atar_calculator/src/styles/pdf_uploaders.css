@@ -1,0 +1,134 @@
+.pdf-uploader-container {
+}
+
+.file-upload-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background-color: white;
+    font-family: var(--default-font-family);
+    font-size: 15px;
+    margin: 10px 5%;
+    border: 2px dashed black;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.file-upload-box p {
+    margin: 0;
+}
+
+.file-upload-plus {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--default-bg-color);
+}
+
+.file-upload-box:hover {
+    background: #fff6f3;
+}
+
+.file-upload-box-active {
+    background: #fff6f3;
+    border-color: var(--default-bg-color);
+}
+
+.file-upload-error {
+    color: #b00020;
+    font-size: 0.85rem;
+    margin: 0.5rem 5% 0;
+}
+
+.navigation-container { 
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 5%;
+}
+
+.pdf-navigation-container { 
+    width: 61%;
+}
+
+.pdf-selector-container{ 
+    width: 60%;
+}
+
+.page-navigation-container {
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pdf-selector, 
+.pdf-navigation-container > select {
+    background-color: white;
+    outline: none;
+    border: 2px solid black;
+    padding: 0.5em;
+    border-radius: 8px;
+    margin: 0px 8px;
+    overflow: hidden;
+    max-width: 60%;
+}
+
+.page-navigation-container > button {
+    background-color: white;
+    outline: none;
+    border: 2px solid black;
+    padding: 0.5em;
+    border-radius: 8px;
+    min-width: 80px;
+}
+
+.page-navigation-container > h3 {
+    font-size: 13px;
+    margin: 0px 10px;
+}
+
+.zoom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0px 5%;
+}
+
+.zoom-container > button {
+    background-color: white;
+    outline: none;
+    border: 2px solid black;
+    padding: 0.3em 0.8em;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.zoom-container > button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.zoom-container > h3 {
+    font-size: 13px;
+    margin: 0px;
+    min-width: 48px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.pdf-display-container {
+    display: flex; 
+    justify-content: center;
+    background-color: #C7B7A3;
+    border: 2px solid black;
+    margin: 8px 5%;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 1000px;
+}

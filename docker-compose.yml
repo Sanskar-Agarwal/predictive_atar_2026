@@ -1,0 +1,18 @@
+name: 2026_predictive_atar
+
+services:
+  web:
+    build: .
+    ports:
+      - "8026:8026"
+    # credentials.json, .env, and db.sqlite3 are baked into the image (see
+    # Dockerfile / .dockerignore) so the built image is fully self-contained —
+    # no bind-mounted host files required to run it.
+
+  frontend:
+    build: ./frontend/atar_calculator
+    ports:
+      - "2026:2026"
+    depends_on:
+      - web
+    stdin_open: true

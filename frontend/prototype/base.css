@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css');
+
+:root {
+    --default-font-fam: "Space Grotesk",
+    --default-bg-color: #E64626;
+}
+/* Style the container */
+.custom-dropdown {
+    position: relative;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Style the dropdown toggle button */
+.dropdown-toggle {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Style the dropdown list */
+.dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    background-color: #fff;
+}
+
+/* Show the list when the button is hovered or focused */
+.custom-dropdown:hover .dropdown-list,
+.custom-dropdown:focus-within .dropdown-list {
+    display: block;
+}
+
+/* Style list items */
+.dropdown-list li {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+/* Style list items on hover */
+.dropdown-list li:hover {
+    background-color: #f0f0f0;
+}

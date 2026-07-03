@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "django-backend",
+      "runtimeExecutable": "venv/bin/python",
+      "runtimeArgs": ["manage.py", "runserver", "0.0.0.0:8026"],
+      "port": 8026
+    },
+    {
+      "name": "react-frontend",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "export PATH=/opt/homebrew/bin:$PATH && PORT=2026 npm --prefix frontend/atar_calculator start"],
+      "port": 2026
+    }
+  ]
+}

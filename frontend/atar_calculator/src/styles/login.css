@@ -1,0 +1,142 @@
+@import './components/slider.css';
+
+:root {
+    --border-radius: 12px;
+}
+
+body {
+    background-color: #F9E8D9;
+} 
+
+.login-container {
+    display: flex;
+    margin: 5% 10%;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+.login-left-component,
+.login-right-component {
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10% 0px;
+    width: 50%;
+    max-width: 50%;
+    height: 500px;
+}
+
+.login-left-component {
+    border-right: 1px solid black;
+}
+
+.login-right-component {
+    border-left: 1px solid black;
+} 
+
+.logo-icon { 
+    width: 80%;
+    height: 80%;
+}
+
+.logo-icon > img { 
+    width: 100%;
+    height: 100%;
+}
+
+.title-text {
+    display: flex;
+    margin: 0px 5%;    
+    justify-content: center;
+    font-size: 25px; 
+    font-weight: bold;
+    font-style: italic;
+}
+
+.input-container {
+    display: flex inline;
+    align-items: center;
+    min-height: 60px;
+    width: 100%;
+    margin: 10px 10px;
+}
+
+.icon-container,
+.textfield-container {
+    height: 3.5rem;
+}
+
+.icon-container {
+    width: 15%;
+    border: 2px solid black; 
+    border-radius: 8px 0px 0px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container > img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    scale:  0.8;
+}
+
+#password-icon { 
+    opacity: 0.65;
+    scale: 0.6;
+}
+
+.textfield-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid black;
+    border-left: 0px;
+    border-radius: 0px 8px 8px 0px;
+    overflow: hidden;
+}
+
+.custom-input {
+    border: none;
+    padding: 0px 10px;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-family: var(--default-font-family);
+}
+
+.login-utility-container {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.remember-me-container {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.login-submit-button { 
+    margin: 5%;
+    width: 100%;
+    height: 3em;
+    transition: 0.3s;
+    background-color: var(--default-bg-color);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login-submit-button:hover { 
+    scale: 1.1;
+}

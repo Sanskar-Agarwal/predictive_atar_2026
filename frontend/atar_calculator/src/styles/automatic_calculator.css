@@ -1,0 +1,256 @@
+:root {
+    --default-border-radius: 12px;
+}
+
+.auto-container {
+    margin: 1.5rem 8% 5rem;
+    font-family: var(--default-font-family);
+    color: #111;
+}
+
+.auto-title {
+    font-size: 1.8rem;
+    margin: 0 0 0.25rem;
+}
+
+.auto-subtitle {
+    color: #444;
+    margin: 0 0 1.5rem;
+    line-height: 1.4;
+}
+
+/* ---- "No API available" popup ---- */
+.api-unavailable-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.api-unavailable-modal {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: var(--default-border-radius);
+    padding: 1.5rem;
+    max-width: 26rem;
+    text-align: center;
+}
+
+.api-unavailable-modal h3 {
+    margin: 0 0 0.75rem;
+}
+
+.api-unavailable-modal p {
+    margin: 0 0 1.25rem;
+    color: #444;
+    line-height: 1.4;
+}
+
+.api-unavailable-close {
+    border: none;
+    background: var(--default-bg-color);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ---- Upload dropzone (compact, themed to match the bordered boxes) ---- */
+.auto-dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border: 2px dashed #000;
+    border-radius: var(--default-border-radius);
+    padding: 1.5rem;
+    cursor: pointer;
+    background: #fff;
+    color: #222;
+    transition: background 0.15s ease;
+    user-select: none;
+}
+
+.auto-dropzone:hover {
+    background: #fff6f3;
+}
+
+.auto-dropzone-plus {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--default-bg-color);
+}
+
+/* ---- Status / notes ---- */
+.auto-status {
+    margin-top: 1rem;
+}
+
+.auto-error {
+    color: #b00020;
+}
+
+.auto-note {
+    background: #eef3f8;
+    border: 1px solid #c9d8e6;
+    border-left: 4px solid #4a6f9b;
+    color: #2c3e50;
+    padding: 0.6rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+/* ---- Results ---- */
+.auto-results {
+    margin-top: 1.75rem;
+}
+
+.auto-meta-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.auto-meta-row label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: #444;
+    font-weight: bold;
+}
+
+.auto-meta-input {
+    width: 9rem;
+    padding: 0.55rem 0.7rem;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: normal;
+}
+
+/* ---- Editable subject table (mirrors the manual calculator look) ---- */
+.auto-table-wrap {
+    border: 2px solid #000;
+    border-radius: var(--default-border-radius);
+    overflow: hidden;
+}
+
+.auto-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--default-font-family);
+}
+
+.auto-table th {
+    background-color: var(--default-bg-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    padding: 1.1em 0.5em;
+    border-right: 2px solid #000;
+}
+
+.auto-table th.col-remove {
+    border-right: none;
+}
+
+.auto-table td {
+    background: #fff;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    padding: 0;
+}
+
+.auto-table td.cell-delete {
+    border-right: none;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.auto-table input,
+.auto-table select {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.85rem 0.8rem;
+    font-family: inherit;
+    font-size: 14px;
+    color: #111;
+}
+
+.auto-table input:focus,
+.auto-table select:focus {
+    background: #fff6f3;
+}
+
+.col-subject { width: 34%; }
+.col-mark    { width: 15%; }
+.col-scale   { width: 20%; }
+.col-source  { width: 20%; }
+.col-delete  { width: 11%; }
+
+.mark-input {
+    font-weight: 700;
+}
+
+.source-input {
+    color: #555;
+}
+
+/* Delete-row button (slate, not red) */
+.row-delete {
+    border: none;
+    background: #5b6470;
+    color: #fff;
+    font-size: 0.8rem;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+
+.row-delete:hover {
+    background: #3f4651;
+}
+
+/* Add-row footer cell with centred orange circle (matches manual page) */
+.add-row-cell {
+    text-align: center;
+    padding: 0.85rem 0 !important;
+    border-right: none !important;
+}
+
+.add-button-circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--default-bg-color);
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.add-button-circle:hover {
+    transform: scale(1.15);
+}
+
+.auto-usage {
+    color: #999;
+    font-size: 0.8rem;
+    margin-top: 1.25rem;
+}
