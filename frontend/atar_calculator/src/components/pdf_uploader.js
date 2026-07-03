@@ -8,10 +8,13 @@ import { pdfjs } from 'react-pdf';
 import '../styles/pdf_uploaders.css';
 
 // Configurations
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  '../../node_modules/react-pdf/node_modules/pdfjs-dist/build/pdf.worker.min.js',
-  import.meta.url,
-).toString();
+// Loaded from a CDN (matching react-pdf's bundled pdfjs-dist version) instead
+// of bundling the file locally via new URL(...): CRA's webpack config runs
+// this vendor file through babel-loader when bundled that way, which injects
+// Node-style require() calls that don't exist in a browser Worker context —
+// causing "Uncaught ReferenceError: require is not defined" and breaking PDF
+// rendering entirely in production builds.
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 const MIN_SCALE = 0.4;
 const MAX_SCALE = 3;

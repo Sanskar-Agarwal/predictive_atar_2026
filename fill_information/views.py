@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+import os
 import numpy
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -64,8 +65,13 @@ def send_sheets_request(data):
 
     sheet_range = 'Sheet1'
 
+    # Defaults to the local relative path (baked into the image for local
+    # Docker use). In cloud deployments where the file isn't committed to
+    # git, GOOGLE_CREDENTIALS_PATH points at wherever the host's secret-file
+    # feature mounts it instead (e.g. Render mounts secret files under
+    # /etc/secrets/<filename>).
     credentials = service_account.Credentials.from_service_account_file(
-        'credentials.json',
+        os.environ.get('GOOGLE_CREDENTIALS_PATH', 'credentials.json'),
         scopes=['https://www.googleapis.com/auth/spreadsheets'],
     )
 
