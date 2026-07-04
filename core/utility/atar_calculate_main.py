@@ -948,6 +948,21 @@ def nsw_calculation(input):
 
     integer_units = [int(x) for x in units]
 
+    # English Requirement Check — NSW/UAC requires at least 2 units of a
+    # Board Developed English course (English Standard, Advanced, EAL/D,
+    # Extension 1/2, Literature, etc.). Without this check, a missing English
+    # subject only shows up as "Select_At_Least_2_English" being infeasible
+    # inside nsw_atar_calculate_paradigm below, which is swallowed by that
+    # call's try/except and silently yields an empty subject selection (score
+    # 0) — mapping to the floor ATAR of 50 as if it were a genuine low score
+    # rather than an eligibility failure.
+    english_units = sum(u for s, u in zip(subjects, integer_units) if 'English' in s)
+    if english_units < 2:
+        raise CustomErrorException(
+            "Must include at least 2 units of an English course (e.g. English Standard, "
+            "English Advanced, English Extension 1/2, English EAL/D, Literature) for a NSW ATAR."
+        )
+
     # NSW builds the ATAR from the best 10 units. If fewer than 10 units were
     # entered, the subject-selection solver is infeasible and the result falls
     # back to the floor (50). Flag that explicitly so a 50 from too few units is
