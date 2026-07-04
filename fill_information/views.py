@@ -61,19 +61,32 @@ SPREADSHEET_IDS = [
 ]
 
 
+# Cached across requests so each submission doesn't re-read credentials.json
+# and re-authenticate with Google from scratch — google-auth transparently
+# refreshes the underlying token on this same Credentials object as needed,
+# so one build() per process is safe to reuse indefinitely.
+_sheets_service = None
+
+
+def _get_sheets_service():
+    global _sheets_service
+    if _sheets_service is None:
+        # Defaults to the local relative path (baked into the image for local
+        # Docker use). In cloud deployments where the file isn't committed to
+        # git, GOOGLE_CREDENTIALS_PATH points at wherever the host's secret-file
+        # feature mounts it instead (e.g. Render mounts secret files under
+        # /etc/secrets/<filename>).
+        credentials = service_account.Credentials.from_service_account_file(
+            os.environ.get('GOOGLE_CREDENTIALS_PATH', 'credentials.json'),
+            scopes=SCOPES,
+        )
+        _sheets_service = build("sheets", "v4", credentials=credentials)
+    return _sheets_service
+
+
 def send_sheets_request(data):
 
     sheet_range = 'Sheet1'
-
-    # Defaults to the local relative path (baked into the image for local
-    # Docker use). In cloud deployments where the file isn't committed to
-    # git, GOOGLE_CREDENTIALS_PATH points at wherever the host's secret-file
-    # feature mounts it instead (e.g. Render mounts secret files under
-    # /etc/secrets/<filename>).
-    credentials = service_account.Credentials.from_service_account_file(
-        os.environ.get('GOOGLE_CREDENTIALS_PATH', 'credentials.json'),
-        scopes=['https://www.googleapis.com/auth/spreadsheets'],
-    )
 
     # Append the timestamp once so the same row is written to every sheet.
     utc_datetime = datetime.datetime.utcnow()
@@ -81,7 +94,7 @@ def send_sheets_request(data):
     aest_datetime = utc_datetime.replace(tzinfo=pytz.utc).astimezone(aest)
     data.append(aest_datetime.strftime("%m/%d/%Y, %H:%M:%S"))
 
-    service = build("sheets", "v4", credentials=credentials)
+    service = _get_sheets_service()
     body = {"values": [data]}
 
     results = []
