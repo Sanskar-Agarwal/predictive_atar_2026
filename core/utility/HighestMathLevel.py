@@ -51,7 +51,11 @@ def find_highest_math(units, state):
     key_function = lambda unit: math_units.index(unit) if unit in math_units else float('-inf')
 
     highest_unit = max(lowercase_units, key=key_function, default=None)
-    if 'math' not in highest_unit:
+    # ACT maps every subject through equivalence_map.get(), which returns None
+    # for any non-math subject — if the student has no math subject at all,
+    # highest_unit ends up None here (not a subject string), and 'math' not in
+    # None used to crash with a TypeError instead of reporting no math taken.
+    if highest_unit is None or 'math' not in highest_unit:
         return 'N/A'
     return highest_unit
 
