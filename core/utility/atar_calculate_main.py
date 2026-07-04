@@ -394,6 +394,27 @@ def update_tas_subjects():
 # }
 def tas_calculation(raw_marks):
     print('raw_marks: ', raw_marks)
+
+    # Eligibility Check — per TASC's "Understanding the ATAR" factsheet, a TE
+    # Score requires at least a Satisfactory Achievement (SA) or better in at
+    # least 4 TASC Level 3/4 courses. Without this check, a student with too
+    # few EA/HA/CA/SA results (e.g. mostly Preliminary/Limited Achievement,
+    # which tas_resolve_course_score correctly excludes) would still get a TE
+    # Score/ATAR computed from whatever few courses were left, instead of
+    # being told they don't meet the minimum requirement.
+    TAS_MIN_ELIGIBLE_COURSES = 4
+    all_subjects = [s for year_data in raw_marks.values() for s in year_data.get('subjects', [])]
+    eligible_count = sum(
+        1 for s in all_subjects if tas_resolve_course_score(s['subject'], s['score']) is not None
+    )
+    if eligible_count < TAS_MIN_ELIGIBLE_COURSES:
+        raise CustomErrorException(
+            f"Must achieve at least a Satisfactory Achievement (SA) or better in at least "
+            f"{TAS_MIN_ELIGIBLE_COURSES} TASC Level 3/4 courses for a TAS ATAR "
+            f"(found {eligible_count} eligible course(s)). Preliminary Achievement and Limited "
+            f"Achievement results don't receive a course score and don't count towards this."
+        )
+
     tes_total = 0
     tes_secondary = -1
     remaining_subjects = []
@@ -483,6 +504,36 @@ def tas_apply_scaling(instance, score):
         return scaled_score
 
 
+def tas_resolve_course_score(course_name, raw_score):
+    """
+    Resolve a raw TAS course result to a numeric course score, or return None
+    if the course doesn't receive one under TASC rules. Per TASC's
+    "Understanding the ATAR" factsheet, only Exceptional/High/Commendable/
+    Satisfactory Achievement (EA/HA/CA/SA) results are scaled into a course
+    score — Preliminary and Limited Achievement are not, and don't count
+    towards the TE Score.
+    """
+    score = raw_score
+    try:
+        instance = Tas_scaling_alt.objects.get(course=course_name)
+        score = tas_apply_scaling(instance, raw_score)
+    except Exception:
+        pass
+
+    subj_tables = {
+        'EA': 19,
+        'HA': 14,
+        'CA': 10,
+        'SA': 7
+    }
+
+    if score in subj_tables:
+        return float(subj_tables[score])
+    if is_numeric(score):
+        return float(score)
+    return None
+
+
 # Calculate part of TE score
 # Apply scaling
 # [ {subject: 'math', score: 19, credits: 15}, {subject: 'english', score: EA, credits: 15} ]
@@ -500,34 +551,26 @@ def tas_calculate_main(raw_marks, credit_count):
         print("total_score: ", total_score)
         subject_count += 1
         course_name = subject['subject']
-        score = subject['score']
 
-        try:
-            instance = Tas_scaling_alt.objects.get(course=course_name)
-            score = tas_apply_scaling(instance, subject['score'])
-        except:
-            print("Subject is not included in scaling table")
-
-        subj_tables = {
-            'EA': 19,
-            'HA': 14,
-            'CA': 10,
-            'SA': 7
-        }
-
-        if score in subj_tables.keys():
-            score = subj_tables[score]
+        score = tas_resolve_course_score(course_name, subject['score'])
+        if score is None:
+            # Preliminary Achievement and Limited Achievement don't receive a
+            # scaled course score under TASC rules, so this course is simply
+            # excluded from the TE score. Previously this fell through to
+            # float(score) on the raw grade string (e.g. 'PA'), crashing with
+            # an unhelpful error instead of just not counting the course.
+            print(f"'{subject['score']}' has no TASC course score (not EA/HA/CA/SA) — excluding {course_name} from the TE score")
+            continue
 
         required_credits -= subject['credits']
         if required_credits >= 0:
-            total_score += float(score)
+            total_score += score
             if required_credits == 0:
                 break
         else:
             # Total credits < 0
             used_credits = subject['credits'] + required_credits
-            # fraction = float(subject['score']) * (used_credits / subject['credits'])
-            fraction = float(score) * (used_credits / subject['credits'])
+            fraction = score * (used_credits / subject['credits'])
             subject['credits'] -= used_credits
             total_score += fraction
             remaining_subjects.append(subject)
