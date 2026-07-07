@@ -11,7 +11,10 @@ def find_highest_math(units, state):
     math_units = []
 
     if state == "NSW":
-        math_units = ['mathematics standard 1', 'mathematics standard 2', 'mathematics advanced', 'mathematics extension 1', 'mathematics extension 2']
+        # NSW's Subject table has this course as 'Mathematics Standard 1 Exam',
+        # not plain 'Mathematics Standard 1' — the unqualified name never
+        # matched, so it was silently unrecognised as a math subject.
+        math_units = ['mathematics standard 1 exam', 'mathematics standard 2', 'mathematics advanced', 'mathematics extension 1', 'mathematics extension 2']
     elif state == "VIC":
         math_units = ['further mathematics', 'mathematical methods', 'specialist mathematics']
     elif state == "QLD":
