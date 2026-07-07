@@ -16,13 +16,39 @@ def find_highest_math(units, state):
         # matched, so it was silently unrecognised as a math subject.
         math_units = ['mathematics standard 1 exam', 'mathematics standard 2', 'mathematics advanced', 'mathematics extension 1', 'mathematics extension 2']
     elif state == "VIC":
-        math_units = ['further mathematics', 'mathematical methods', 'specialist mathematics']
+        # 'foundation mathematics' and 'general mathematics' are lower-level
+        # (pre-Unit 3/4) courses that can still appear on a transcript — added
+        # below 'further mathematics' so they're recognised without outranking
+        # any of the real VCE Unit 3/4 subjects.
+        math_units = ['foundation mathematics', 'general mathematics', 'further mathematics', 'mathematical methods', 'specialist mathematics']
     elif state == "QLD":
         math_units = ['essential mathematics', 'general mathematics', 'mathematical methods', 'specialist mathematics']
     elif state == "TAS":
-        math_units = ['general mathematics',
+        # Lower-level/prerequisite courses (Essential Skills, Preliminary
+        # stages, Mathematics 1A/1B/I/II) are ranked below 'general
+        # mathematics' — this value is only ever logged to the sheet, not
+        # used in any ATAR calculation, so exact relative ordering among these
+        # lower tiers doesn't affect anything but which name gets displayed.
+        math_units = ['essential skills - maths',
+                        'essential mathematics - personal',
+                        'essential mathematics - workplace',
+                        'preliminary mathematics stage 1',
+                        'preliminary mathematics stage 2',
+                        'preliminary mathematics stage 3',
+                        'preliminary mathematics stage 4',
+                        'mathematics 1a',
+                        'mathematics 1b',
+                        'mathematics i',
+                        'mathematics ii',
+                        'mathematics',
+                        'general mathematics',
+                        # Both punctuation variants exist as separate real
+                        # Subject records — a hyphen one (already matched) and
+                        # an en dash (–) one that used to silently fail to match.
                         'mathematics methods - foundation',
+                        'mathematics methods – foundation',
                         'mathematics methods',
+                        'advanced topics in discrete mathematics',
                         'mathematics specialised',
                     ]
     elif state == "WA":
