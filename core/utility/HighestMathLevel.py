@@ -46,6 +46,12 @@ def find_highest_math(units, state):
     elif state == "SA":
         # 99% sure this is right
         math_units = ['essential mathematics', 'general mathematics', 'mathematical methods', 'specialist mathematics']
+    elif state == "IB":
+        # IB Group 5 offers exactly these two courses (a student only ever
+        # takes one) — Analysis & Approaches is the more rigorous/traditional
+        # pure-math pathway, so it's ranked above Applications & Interpretation,
+        # consistent with how the other regions order their math subjects.
+        math_units = ['mathematics: applications & interpretation', 'mathematics: analysis & approaches']
 
 
     key_function = lambda unit: math_units.index(unit) if unit in math_units else float('-inf')
