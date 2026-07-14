@@ -1021,6 +1021,25 @@ def nsw_calculation(input):
             f"(found {total_units}). Check for missing base courses."
         )
 
+    # Category B Cap Check — NSW allows at most 2 units of Category B
+    # (Content Endorsed / VET "Exam") courses to count towards the ATAR. If
+    # the non-Category-B units aren't enough to cover the remaining units
+    # needed for a 10-unit aggregate, "Max_2_Category_B" becomes infeasible
+    # inside nsw_atar_calculate_paradigm below — the same silent-50 failure
+    # mode as the English check above, just triggered by a different
+    # constraint (course selection comes back empty, score 0, floor ATAR).
+    NSW_MAX_CATEGORY_B_UNITS = 2
+    non_category_b_units = sum(
+        u for u, c in zip(integer_units, categories) if c != "Category B"
+    )
+    if non_category_b_units < NSW_REQUIRED_UNITS - NSW_MAX_CATEGORY_B_UNITS:
+        raise CustomErrorException(
+            f"Not enough non-Category B units for a NSW ATAR — at most "
+            f"{NSW_MAX_CATEGORY_B_UNITS} units of Category B (e.g. VET \"Exam\") "
+            f"courses can count, so at least {NSW_REQUIRED_UNITS - NSW_MAX_CATEGORY_B_UNITS} "
+            f"units must come from other courses (found {non_category_b_units})."
+        )
+
     try:
         course = nsw_atar_calculate_paradigm(integer_units, list(subjects), marks, categories)
     except Exception as e:
