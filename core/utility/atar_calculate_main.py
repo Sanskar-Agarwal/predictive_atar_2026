@@ -986,8 +986,17 @@ def nsw_calculation(input):
 
     subjects, marks, units = nsw_scaling(input)
 
-    categories = Subject.objects.filter(subject__in=subjects, regionid_id__abbreviation='NSW').values_list('category',
-                                                                                                           flat=True)
+    # Subject.objects.filter(...).values_list(...) has no .order_by(), so its
+    # result order isn't guaranteed to match `subjects` — categories[i] was
+    # being paired positionally with subjects[i] regardless, silently
+    # mislabelling which course is actually Category A/B whenever the DB
+    # returned rows in a different order (e.g. by primary key) than the
+    # subjects were submitted in. Look categories up by name instead so each
+    # subject always gets its own, correct category.
+    category_by_subject = dict(
+        Subject.objects.filter(subject__in=subjects, regionid_id__abbreviation='NSW').values_list('subject', 'category')
+    )
+    categories = [category_by_subject.get(s) for s in subjects]
 
     integer_units = [int(x) for x in units]
 
